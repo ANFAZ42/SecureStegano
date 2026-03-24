@@ -1,0 +1,3 @@
+8. Documentation (5 Marks)
+
+The project structure is professionally separated into src/, tests/, and data/ directories following software engineering best practices. A robust README.md file defines the technology stack and installation process, and a user-friendly HOW_TO_USE.txt is included for end-user operation. The source code itself is thoroughly modularized to ensure maintainability. (Note: Ensure you include screenshots of your working GUI and any data flow diagrams in your final physical/PDF submission).

@@ -1,0 +1,3 @@
+2. Literature Review & Domain Understanding (10 Marks)
+
+Traditional tools usually offer either encryption or steganography. Using only encryption invites cryptanalysis or brute-force attacks because the encrypted file is visible to attackers. Using only steganography is dangerous because once the hidden payload is discovered, the plaintext is completely exposed. The identified gap is a lack of accessible, integrated tools that perform both securely with visual feedback (PSNR/MSE). This project leverages OpenCV for image manipulation and PyCryptodome for robust AES encryption to bridge this gap, ensuring data remains unreadable even if the steganography is detected.

@@ -1,0 +1,8 @@
+3. System Design & Architecture (15 Marks)
+
+- Cryptographic Workflow: A user-provided password is run through PBKDF2 to derive a strong AES-256 key. The plaintext data is padded securely and encrypted using AES (such as CBC or GCM mode).
+- Key Management: Keys are securely derived at runtime and never stored locally. The cryptographic salt is embedded alongside the ciphertext.
+- Data Flow:
+  Encoding: Plaintext -> AES Encryptor (Ciphertext) -> LSB Steganography Engine -> Output Stego-Image.
+  Decoding: Output Stego-Image -> LSB Extractor (Ciphertext) -> AES Decryptor -> Plaintext.
+- Security Considerations: Key stretching significantly limits brute-force attacks, while AES-256 provides military-grade data confidentiality.

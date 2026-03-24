@@ -1,0 +1,6 @@
+7. Innovation & Problem-Solving (10 Marks)
+
+Key innovations in this approach include:
+- Integrated Distortion Analysis: Providing real-time PSNR and MSE feedback directly within the GUI so users instantly know their cover image isn't compromised visually.
+- Dual-Layer Defense Strategy: By enforcing a robust encryption layer before the steganography layer, an attacker performing LSB extraction will only yield encrypted pseudo-random bytes, effectively acting as a secondary "invisible" lock on the data.
+- (Optional depending on your implementation): Integration of data compression using 'zlib' to compress payloads before embedding, and randomized LSB distribution seeded by the password to completely nullify linear sequential analysis.

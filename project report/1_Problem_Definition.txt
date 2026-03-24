@@ -1,0 +1,24 @@
+1. Problem Definition (10 Marks)
+
+1.1 Context and Background
+In the modern digital age, the secure transmission of highly sensitive information over fundamentally insecure or monitored communication channels is a critical challenge. Historically, organizations and individuals have relied almost entirely on traditional cryptography (such as the Advanced Encryption Standard, AES) to protect data confidentiality. While cryptography mathematically scrambles the data so it cannot be read, it fundamentally suffers from a major operational flaw: it leaves a highly visible footprint.
+
+1.2 The Core Problem
+The mere presence of encrypted data (ciphertext) traveling across a network immediately draws attention. To an adversary, network monitor, or malicious actor, a block of heavily encrypted data serves as a bright beacon indicating that something highly valuable is being transmitted. This significantly increases the risk that an attacker will intercept the data and attempt to employ brute-force attacks, perform cryptanalysis, or hold the data captive until the encryption key can be obtained via other means (such as social engineering or malware). 
+
+Therefore, the core problem is a lack of "stealth". Merely encrypting data is no longer sufficient; the very existence of the confidential communication must be entirely hidden from third-party observers.
+
+1.3 The Proposed Solution
+The objective of this project is to resolve this vulnerability by engineering a "Dual-Layer Zero-Knowledge Security Application." This application combines robust, military-grade Cryptography with high-fidelity Image Steganography to provide complete protection. 
+- Layer 1 (Security): The sensitive plaintext is first encrypted using AES-256, protecting its contents mathematically.
+- Layer 2 (Secrecy): The resulting ciphertext is then embedded inside a seemingly innocent digital image (a carrier or cover image) using Least Significant Bit (LSB) steganography. 
+
+Through this approach, the cover image can be transmitted openly. To any observer, it appears to be an ordinary, uninteresting photograph, completely bypassing suspicion and eliminating the primary cryptanalytic target footprint altogether.
+
+1.4 Measurable Scope and Objectives
+This project has a precise, mathematically measurable scope to validate its real-world viability. The core objectives include:
+1. Guaranteeing cryptographic integrity via AES-GCM or AES-CBC modes with PBKDF2 key derivation.
+2. Embedding robust payloads inside standard RGB image arrays without triggering visual distortion noticeable to the human visual system.
+3. Providing measurable, empirical validation of the steganographic stealth by achieving a Peak Signal-to-Noise Ratio (PSNR) greater than 30dB and maintaining a Mean Squared Error (MSE) near zero. 
+
+By achieving both mathematical security and measurable visual invisibility, this solution addresses a crucial gap in modern secure communications.

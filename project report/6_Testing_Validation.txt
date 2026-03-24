@@ -1,0 +1,7 @@
+6. Testing & Validation (10 Marks)
+
+- Unit Testing: Python's 'unittest' module is used extensively in tests/test_crypto.py and tests/test_steganography.py, rigorously verifying all logic branches.
+- Attack Simulations:
+  Brute-Force: Mitigated due to the high entropy required to guess the AES-256 key, compounded heavily by the PBKDF2 iterations.
+  Steganalysis Mitigation: The embedded ciphertext looks like pseudo-random data noise, making statistical detection far harder compared to embedding plain text strings.
+- Performance: The tool actively measures Peak Signal-to-Noise Ratio (PSNR) and Mean Squared Error (MSE) to mathematically validate that the image distortion remains completely imperceptible.

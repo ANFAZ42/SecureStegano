@@ -1,0 +1,7 @@
+4. Implementation (25 Marks)
+
+The working prototype is divided into modular, professional components:
+- src/encryptor.py: Handles AES encryption/decryption using the PyCryptodome library securely.
+- src/steganography.py: Handles the pixel array manipulation via OpenCV to perform precise LSB embedding.
+- src/main_gui.py: Provides an intuitive Tkinter user interface for encoding and decoding operations.
+- src/analysis.py: Accurately calculates image degradation metrics to ensure stability.

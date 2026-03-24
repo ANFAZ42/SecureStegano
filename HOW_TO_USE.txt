@@ -1,0 +1,27 @@
+Welcome to the Secret Message Hider!
+
+This program is like a magic trick. It lets you hide secret messages inside ordinary pictures! No one will even know the message is there. 
+
+Here is how you use it:
+
+*** HOW TO HIDE A SECRET MESSAGE (ENCODING) ***
+
+1. Start the Magic: Open the program by running it (your parent or teacher can help double-click or run 'python src/main_gui.py').
+2. Pick a Picture: Click the button to choose a normal picture (like a photo of a dog or a tree) that you want to hide your message inside.
+3. Write your Secret: Type your secret message in the big text box.
+4. Create a Password: Think of a secret password. You MUST remember this! Type it in the password box. This locks your message like a safe.
+5. Hide It!: Click the "Encode" button.
+6. Save your Magic Picture: The program will ask you where to save the new picture. Give it a name like "secret_dog.png" and save it.
+
+*Now the message is hidden inside your new picture! The picture looks exactly the same as the old one.*
+
+*** HOW TO READ A SECRET MESSAGE (DECODING) ***
+
+1. Start the Magic: Open the program again.
+2. Go to Read Mode: Click on the "Decode" or "Read" tab at the top.
+3. Pick the Magic Picture: Click to choose the picture that has the secret message hidden inside it (like "secret_dog.png").
+4. Unlock the Safe: Type in the EXACT same password you used before.
+5. Reveal It!: Click the "Decode" button.
+6. Read: Your secret message will magically appear on the screen!
+
+Have fun sending secret codes!
