@@ -26,7 +26,7 @@ class SteganographyEngine:
         return indices
 
     @staticmethod
-    def encode(image_path: str, password: str, message: str, output_path: str):
+    def encode(image_path: str, password: str, message: str, output_path: str, progress_callback=None):
         """
         Encodes a secret message into an image.
         Pipeline: Compress -> Encrypt -> Prefix Length -> LSB Embed
@@ -59,10 +59,15 @@ class SteganographyEngine:
         indices = SteganographyEngine._create_prng(password, len(flat_img))
         
         # 5. Embed bits into LSB
+        total_bits = len(bits)
         for i, bit in enumerate(bits):
             idx = indices[i]
             # Clear the LSB and set to the bit
             flat_img[idx] = (flat_img[idx] & 254) | int(bit)
+            
+            if progress_callback and (i % 50000 == 0 or i == total_bits - 1):
+                progress = int((i + 1) / total_bits * 100)
+                progress_callback(progress)
             
         # 6. Reconstruct image and save
         stego_img = flat_img.reshape((height, width, channels))
@@ -71,7 +76,7 @@ class SteganographyEngine:
         return True
 
     @staticmethod
-    def decode(image_path: str, password: str) -> str:
+    def decode(image_path: str, password: str, progress_callback=None) -> str:
         """
         Decodes a secret message from a stego-image.
         Pipeline: LSB Extract -> Read Length -> Read Payload -> Decrypt -> Decompress
@@ -106,6 +111,11 @@ class SteganographyEngine:
         for i in range(32, total_bits_to_read):
             idx = indices[i]
             payload_bits += str(flat_img[idx] & 1)
+            
+            if progress_callback and (i % 50000 == 0 or i == total_bits_to_read - 1):
+                # Calculate progress from 0 to 100%
+                progress = int((i - 31) / (total_bits_to_read - 32) * 100)
+                progress_callback(progress)
             
         # Convert bits to bytes
         payload_bytes = bytearray()
